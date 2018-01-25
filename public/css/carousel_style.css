@@ -1,0 +1,36 @@
+.linha1 {
+	margin-top: 30px;
+}
+
+.btn-default img{
+	width: 50px
+}
+
+.card {
+	width: max-content;
+	border: solid 2px #000;
+	border-radius: 15px;
+	padding: 10px;
+	text-align: center;
+	margin-right: 10px;
+}
+
+.card img {
+	width: 100px;
+	height: 100px;
+}
+
+.card hr {
+	border: 1px solid #000;
+    margin: 1px -10px 15px -10px;
+}
+
+.card button {
+	border: none;
+	background-color: #fff;
+	outline: none;
+}
+
+.flickity-viewport {
+	height: 270px
+}

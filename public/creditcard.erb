@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CARD</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/css.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div id="page">
+			<input type="text" class="form-control">
+			<br>
+			<input type="text" class="form-control">
+			<br>
+			<input type="text" class="form-control">
+			<br>
+			<input type="text" class="form-control">
+			<br>
+		</div>
+
+		<div class="row">
+			<button id="ativar" class="btn btn-default">ativar</button>
+		</div>
+
+	</div>
+
+	<div class="circle"></div>
+
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/js.js"></script>
+	<script type="text/javascript" src="../js/card.js"></script>
+	<script type="text/javascript">
+		new Card({
+			form: 'form', container: '.card',
+			formSelectors: {
+				numberInput: 'input#numero_cartao',
+				nameInput: 'input#nome_cartao',
+				expiryInput: 'input#data_exp',
+				cvcInput: 'input#cvc_code'
+			}
+		})
+	</script>
+</body>
+</html>

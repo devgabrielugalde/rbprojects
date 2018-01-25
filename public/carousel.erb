@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CAROUSEL</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="../img/moto.png">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../css/carousel_style.css">
+</head>
+<body>
+
+	<div class="container">
+		<div id="main" class="row">
+			<button class="btn btn-default">
+				<img src="../img/smartphone.png">
+				<h5><b>Celular</b></h5>
+			</button>
+		</div>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script type="text/javascript">
+	$('.btn-default').on("click", function(){
+		if($('.linha1').length){
+		} else {
+			var div = document.createElement("div");
+			div.setAttribute("class", "row linha1");
+			for (var i = 0; i <= 10; i++) {
+				div.innerHTML += '<div class="card"><img src="../img/moto.png"><h5>MOTO Z2 FORCE</h5><h6>R$ 2.699,00</h6><hr><button>COMPRAR</button></div>';
+			}
+			document.getElementById('main').appendChild(div);
+			$('.linha1').flickity({
+			  cellAlign: 'left',
+			  contain: true,
+			  freeScroll: true,
+			  pageDots: false,
+			  adaptiveHeight: true,
+			  setGallerySize: false
+			});
+		}
+	});
+</script>
+
+</body>
+</html>
