@@ -1,11 +1,20 @@
 require 'sinatra'
 require 'json'
+require 'dotenv'
+
+configure :development do
+	Dotenv.load('dev.env')
+end
+
+configure :production do
+	Dotenv.load('prd.env')
+end
 
 set :views, 'public/'
-enable :sessions
 
-set :bind, '0.0.0.0'
-set :port, 9001
+set :bind, ENV["BIND"]
+set :port, ENV["PORT"]
+enable :sessions
 
 get '/' do
 	erb :index
