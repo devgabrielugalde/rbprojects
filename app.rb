@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'json'
 require 'dotenv'
+require 'logger'
+require 'date'
 
 configure :development do
 	Dotenv.load('dev.env')
@@ -32,34 +34,54 @@ get '/varenv' do
 	erb :varenv
 end
 
+log = Logger.new('log/log.txt')
+
+log.level = Logger::WARN
+
+get '/log' do
+	log.error "This will not be ignored"
+end
+
 get '/json' do
 
-	messages = {
-		:plataform => "webview",
-		:menu => 1,
-		:type => 2,
-		:title => "O que você achou do atendimento?",
-		:replies => [
-			{
-				:display => "Ótimo",
-				:next_intent => "bemol::sochamar 3"
-			},
-			{
-				:display => "Regular",
-				:next_intent => "bemol::sochamar 2"
-			},
-			{
-				:display => "Ruim",
-				:next_intent => "bemol::sochamar 1"
-			}
-		]
-	}
+	begin
 
-	resultado = {
-		:speech => 'action',
-		:messages => messages
-	}.to_json
+		messages = {
+			:plataform => "webview",
+			:menu => 1,
+			:type => 2,
+			:title => asdasd,
+			:replies => [
+				{
+					:display => "Ótimo",
+					:next_intent => "bemol::sochamar 3"
+				},
+				{
+					:display => "Regular",
+					:next_intent => "bemol::sochamar 2"
+				},
+				{
+					:display => "Ruim",
+					:next_intent => "bemol::sochamar 1"
+				}
+			]
+		}
 
-	"<p>#{resultado}</p>"
+		resultado = {
+			:speech => 'action',
+			:messages => messages
+		}.to_json
+
+		puts resultado
+		
+	rescue Exception => e
+		
+		log = Logger.new('log/logJSON.txt')
+
+		log.level = Logger::DEBUG
+
+		log.error "Caí na Exception JSON"
+
+	end
 
 end

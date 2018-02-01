@@ -1,0 +1,2 @@
+E, [2018-01-31T23:55:38.713861 #1848] ERROR -- : Caí na Exception JSON
+E, [2018-01-31T23:55:41.632702 #1848] ERROR -- : Caí na Exception JSON
