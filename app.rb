@@ -34,6 +34,10 @@ get '/varenv' do
 	erb :varenv
 end
 
+get '/mail' do
+	erb :mail
+end
+
 log = Logger.new('log/log.txt')
 
 log.level = Logger::WARN
