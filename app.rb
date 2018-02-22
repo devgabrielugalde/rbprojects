@@ -38,6 +38,10 @@ get '/mail' do
 	erb :mail
 end
 
+get '/slick' do
+	erb :slick
+end
+
 log = Logger.new('log/log.txt')
 
 log.level = Logger::WARN
