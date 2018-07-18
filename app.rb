@@ -22,6 +22,10 @@ get '/' do
 	erb :index
 end
 
+get '/rota-de-teste' do
+	erb :teste
+end
+
 get '/creditcard' do
 	erb :creditcard
 end
