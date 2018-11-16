@@ -1,0 +1,8 @@
+version: '3'
+services:
+  web-api-sap:
+    build: .
+    ports:
+      - "1001:1001"
+    volumes:
+      - .:/code
